@@ -1,10 +1,96 @@
+@keyframes fade-in {
+    from {scale: .5; opacity: 0;}
+    to{scale: 1;opacity: 1;}
+}
+@keyframes fade-out {
+    0% {scale: 1;opacity: 1;}
+    60%{scale: 1;opacity: 1;}
+    100%{scale: .3; opacity: 0;}
+}
+@keyframes come-in {
+    from {scale: 0;}
+    to{scale: 1}
+}
+@keyframes breathing-glow-box {
+    0%, 100% {
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 12px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.75), 0 0 20px rgba(255, 255, 255, 0.75);
+    }
+}
+
+body::-webkit-scrollbar {
+    width: 0px; /* for vertical scroll */
+}
+
 body{
+    background-color: #0c1016;
     margin: 0;
+    width: 100vw;
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: #1B2430;
+    max-width: 100%;
+    overflow-x: hidden;
+
+    /* background-color: #1B2430; */
 }
+.sps{
+    position: fixed;
+    right: calc(-100.5vw + 100%);
+    z-index: 100;
+    animation: scrollwatcher linear;
+    animation-timeline: scroll();
+}
+
+@keyframes scrollwatcher {
+    0% {
+        transform: translateY(0); /* Starts and ends in the original position */
+    }
+    100% {
+        transform: translateY(95vh); /* Moves up by 20px; adjust as needed */
+    }
+}
+/* Style the scrollbar track (optional) */
+::-webkit-scrollbar {
+    width: 16px; /* Width of the scrollbar */
+    height: 16px; /* Height of the scrollbar, for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+    background: transparent; /* Light grey track */
+}
+
+.earthpic{
+    position: absolute;
+    scale: .8;
+    z-index: 4;
+    top: 170%;
+    left: 200px;
+    animation: come-in linear forwards;
+    animation-timeline: view();
+    animation-range-end: contain 100px;
+    filter: drop-shadow(0 0 100px rgba(0, 174, 255, 0.5))
+}
+.star {
+    position: fixed; 
+    width: 4px; 
+    height: 4px; 
+    background-color: white;
+    border-radius: 50%;
+    animation: breathing-glow-box 2s ease-in-out infinite;
+    z-index: 2; 
+    pointer-events: none;
+}
+
 /*top bar section*/
 .topbar {
     position: fixed;
@@ -14,8 +100,8 @@ body{
     height: 10vh;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
-    z-index: 1;
-    overflow: hidden; /* Ensure the pseudo-element does not extend outside the .topbar */
+    z-index: 5;
+    overflow: hidden; 
 }
 
 /* logo */
@@ -26,11 +112,13 @@ body{
     
 }
 .parLogo{
+    text-decoration: none;
     display: flex; 
     transition: transform 0.3s ease;
 }
 .parLogo:hover{
     transform: scale(1.2);
+    animation: breathing-glow-svg 1s ease-in-out infinite; 
 }
 .logotopbar{
     display: flex;
@@ -67,41 +155,78 @@ body{
 }
 .dropdown{
     display: flex;
-    width: 100px;
-    justify-content: center;
+    width: 110px;
+    justify-content: left;
     align-items: center;
     cursor: pointer;
+    z-index: 5;
 }
 
 .dropdown-content {
     position: fixed;
     top: 0;
     right: -50vw; 
-    width: 25vw; 
+    width: 20vw; 
     height: 100%; 
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     transition: right 0.7s ease;
     color: white; 
-    z-index: 1;
+    z-index: 5;
     display: grid;
-    grid-template-rows: 15vh 5vh 5vh 5vh 5vh 100%;
+    grid-template-rows: 15vh 7vh 7vh 7vh 7vh 100%;
     text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+@keyframes breathing-glow-text{
+    0%, 100% {
+      text-shadow: 0 0 8px white, 0 0 12px white;
+    }
+    50% {
+      text-shadow: 0 0 15px white, 0 0 20px white;
+    }
+  }
+  
+  .about-text-dropdown, .profile-text-dropdown, 
+  .courses-text-dropdown, .contactus-text-dropdown {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+    transform: scale(1); 
+  }
+  
+  .about-text-dropdown:hover, .profile-text-dropdown:hover, 
+  .courses-text-dropdown:hover, .contactus-text-dropdown:hover {
+    transform: scale(1.2);
+    animation: breathing-glow-text 1.5s ease-in-out infinite; 
+  }
+  
+
+
+
+
+  @keyframes breathing-glow-svg {
+    0%, 100% {
+        filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    }
 }
 
 
-
-
-
 .dropdown-content.active {
-    right: 0; /* Slide in */
+    right: 0; 
 }
 .ham{
     height: 70px; 
     transition: transform 0.3s ease;
 }
 .ham:hover{
-   
+    animation: breathing-glow-svg 1.5s ease-in-out infinite;
     transform: scale(1.2);
 }
 .topbarlogin{
@@ -122,12 +247,13 @@ body{
 
 
 .middlesection{
-    height: 80vh;
-    background-color: #1B2430;
+    height: 200vh;
+    background-color: #0c1016;
     display: felx;
     text-align: center;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     
 }
 
@@ -144,15 +270,16 @@ body{
     height: 20vh;
 }
 .bottomspacemid{
-    padding-top: 0px;
-    height: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .carousel {
     position: relative;
-    height: 600px;
+    height: 500px;
     width: 80%;
     margin: 0 auto;
+    z-index: 3;
 }
 .carousel_image{
     width: 100%;
@@ -161,6 +288,10 @@ body{
 .carousel_track-container{
     height: 100%;
     position: relative;
+    overflow: hidden;
+    animation: fade-out linear;
+    animation-timeline: view();
+    animation-range-end: cover;
 }
 .carousel_track {
     padding: 0;
@@ -168,7 +299,7 @@ body{
     list-style: none;
     position: relative;
     height: 100%;
-    transition: transform 250ms ease-in;
+    transition: transform 750ms ease-in;
 }
 
 .carousel_slide {
@@ -182,35 +313,39 @@ body{
     top: 50%;
     transform: translateY(-50%);
     border: 0;
-    cursor: pointer;
 }
 .carousel_button_left{
     left: -30px;
 }
 
 .carousel_button_right{
-    right: -40px;
+    right: -30px;
 }
 
 .carousel_indicator{
     border: 0;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    margin: 0 12px;
-    background: rgba(0, 0, 0, 0.3);
+    width: 11px;
+    height: 11px;
+    background: rgb(255, 255, 255);
+}
+.carousel_indicator.current_slide, .carousel_indicator.animate-indicator {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.75), 0 0 12px rgba(255, 255, 255, 0.75);
 }
 .carousel_nav{
+    animation: fade-out linear;
+    animation-timeline: view();
+    animation-range-end: cover;
+    padding: 5px;
     display: flex;
+    gap: 7px;
     justify-content: center;
-    padding: 10px 0;
+    border: 1px solid white;
+    border-radius: 12px;
+    z-index: 2;
 }
 
-.carousel_indicator.current-slide {
-    background: rgba(0, 0, 0, 0.75);
-}
-
-
+.is_hidden{display: none;}
 
 
 
@@ -221,61 +356,76 @@ body{
 
 
 .bottomsection{
-    background-color:#1B2430;
-    border: 1px solid white;
-    height: 60vh;
+    position: relative;
+    overflow: hidden;
+    height: 300vh;
     color: white;
     display: grid;
+    background-color: #0c1016;
     grid-template-columns: 25% 50% 25%;
 }
 .loginfield{
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
     border: none;
-    box-shadow: 0 2px 4px black;
     box-sizing: border-box;
-   
     border: 10px;
     
 }
+
 .log{
     height: 400px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 15px;
     background: rgba(0, 0, 0, 0.5); 
     backdrop-filter: blur(10px);
-    color: white;
+    color: rgb(255, 255, 255);
+    z-index: 6;
 }
 .loginbox, .passwordbox{
-    background-color: #1B2430;
+    font-size: 20px;
+    color: white;
     border: 1px solid #ffffffed;
     width: 75%;
     align-content: center;
     vertical-align: center;
-    height: 22px;
+    height: 8%;
     padding: 14px 16px;
     margin: 0;
     margin: 1px auto;
+    margin-bottom: 6px;
     border-radius: 14px;
     background-color: transparent;
+}
+.loginbox:focus, .passwordbox:focus {
+    outline: none; 
+    animation: breathing-glow-box 2s ease-in-out infinite;
 }
 .forgot, .guest{
     color: rgb(255, 255, 255);
     padding: 14px 16px;
     margin: 1px auto;
 }
+.forgot:hover, .guest:hover{
+    cursor: pointer;
+    animation: breathing-glow-text 2s ease-in-out infinite;
+}
 .login, .newaccount{
     border-radius: 14px;
     font-size: 16px;
     background-color: transparent;
-    width: 250px;
-    height:40px;
+    width: 50%;
+    height:10%;
     margin: 1px auto;
     border: 1px solid #ffffffed;
     color: white;
+}
+.login:hover, .newaccount:hover{
+    animation: breathing-glow-box 2s ease-in-out infinite, breathing-glow-text 2s ease-in-out infinite;
 }
 
 .line{
@@ -286,11 +436,12 @@ body{
     text-align: center;
     border-bottom: 1px solid gray;
 }
-.leftspace{
-    border: 1px solid white;
-}
-.rightspace{
-    border: 1px solid white;
-}
+.moon{
 
-/* 25% 50% 25%*/
+    position: absolute;
+    left: 70%;
+    top: 105%;
+    scale: 2;
+    z-index: 4;
+    filter: drop-shadow(0 0 100px rgba(255, 255, 255, 0.5))
+}

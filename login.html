@@ -5,22 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="loginstyle.css">
     <script src="loginjs.js" defer></script>
-    <title>Document</title>
+    <link rel="icon" type="image/svg+xml" href="uiclogo.svg">
+    <title>HomePage</title>
 </head>
 <body>
+    <img class="earthpic" src="earth.svg" alt="earth">
+    <img class = "sps" src="spacecraftsvg.svg" alt="">
+    <div class="star"></div>
     <div class="dropdown-content">
         <div class="topspace-dropdown"></div>
         <div class="about-container">
-            <p class="about-text-dropdown"></p>
+            <a href="about.html" class="about-text-dropdown">ABOUT</a>
         </div>
         <div class="profile-container">
-            <p class="profile-text-dropdown"></p>
+            <a  class="profile-text-dropdown">PROFILE</a>
         </div>
         <div class="courses-container">
-            <p class="courses-text-dropdown"></p>
+            <a class="courses-text-dropdown">COURSES</a>
         </div>
         <div class="contactus-container">
-            <p class="conatctus-text-dropdown"></p>
+            <a class="contactus-text-dropdown">CONTACT US</a>
         </div>
         <div class="bottomspace-dropdown"></div>
 
@@ -28,12 +32,12 @@
     </div>
     <div class="topbar">
         <div class="logoarea">
-            <div class="parLogo">
+            <a href="login.html" class="parLogo">
                 <div class="logotopbar">
                     <img class = "ulo" src="uiclogo.svg" alt="uic logo">
                 </div>
                     <p class="logotexttopbar">csHUB</p>
-            </div>
+            </a>
                 
         </div>
         <div class="rightitems">
@@ -46,9 +50,9 @@
 
     </div>
     <div class="middlesection">
-        <div class="topspacemid">topspacemid</div>
+        <div class="topspacemid"></div>
         <div class="carousel">
-            <button class="carousel_button carousel_button_left">&#10094</button>
+            <button class="carousel_button carousel_button_left is_hidden">&#10094</button>
             <div class="carousel_track-container">
                 <ul class="carousel_track">
                     <li class="carousel_slide current_slide">
@@ -62,22 +66,22 @@
                     </li>
                 </ul>
             </div>
-            <button class="carousel_button carousel_button_right">&#10095</button>
+            <button class="carousel_button carousel_button_right is_hidden">&#10095</button>
+            
+        </div>
+        
+
+        <div class="bottomspacemid">
             <div class="carousel_nav">
                 <button class="carousel_indicator current_slide"></button>
                 <button class="carousel_indicator"></button>
                 <button class="carousel_indicator"></button>
             </div>
         </div>
-
-
-        <div class="bottomspacemid">
-            
-        </div>
     </div>
     
     <div class="bottomsection">
-        <div class="leftspace">left</div>
+        <div class="leftspace"></div>
         <div class="loginfield">
             <div class="log">
                 <input class="loginbox" placeholder="Username">
@@ -88,10 +92,12 @@
                 <button class="newaccount">Create new account</button>
                 <div class="guest">Continue as Guest</div>
             </div>
-       
-       
+    
+    
         </div>
-        <div class="rightspace">right</div>
+        <div class="rightspace"></div>
+         <img class="moon" src="moon.svg" alt="moon">
     </div>
+   
 </body>
 </html>
