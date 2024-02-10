@@ -1,4 +1,4 @@
-body{
+html, body{
     background-color: #0c1016;
     margin: 0;
     width: 100vw;
@@ -6,9 +6,11 @@ body{
     display: flex;
     flex-direction: column;
     max-width: 100%;
+    max-height: 100vh;
+    padding: 0;
     overflow-x: hidden;
-
-    /* background-color: #1B2430; */
+    overflow-y: hidden;
+    position: relative;
 }
 @keyframes breathing-glow-box {
     0%, 100% {
@@ -100,7 +102,6 @@ body{
 
 .dropdown-content {
     position: fixed;
-    top: 0;
     right: -50vw; 
     width: 20vw; 
     height: 100%; 
@@ -114,6 +115,7 @@ body{
     text-align: center;
     font-weight: bolder;
     font-size: 20px;
+    margin-top: 10vh;
 }
 
 @keyframes breathing-glow-text{
@@ -157,6 +159,7 @@ body{
 .dropdown-content.active {
     right: 0; 
 }
+
 .ham{
     height: 70px; 
     transition: transform 0.3s ease;
@@ -169,25 +172,159 @@ body{
     justify-content: end;
 }
 
+
+/*drop down menu*/
+.rightitems{
+    overflow: visible;
+    width: 50%;
+    display: flex;
+    justify-content: end;
+}
+.dropdown{
+    display: flex;
+    width: 110px;
+    justify-content: left;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.dropdown-content {
+    position: fixed;
+    top: 0;
+    right: -50vw; 
+    width: 20vw; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    transition: right 0.7s ease;
+    color: white; 
+    z-index: 5;
+    display: grid;
+    grid-template-rows: 15vh 7vh 7vh 7vh 7vh 100%;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+@keyframes breathing-glow-text{
+    0%, 100% {
+      text-shadow: 0 0 8px white, 0 0 12px white;
+    }
+    50% {
+      text-shadow: 0 0 15px white, 0 0 20px white;
+    }
+  }
+  
+  .about-text-dropdown, .profile-text-dropdown, 
+  .courses-text-dropdown, .contactus-text-dropdown {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+    transform: scale(1); 
+  }
+  
 /*----------------------*/
+
+
 
 
 /*top section*/
 .topsection{
-    border: white 1px solid;
     height: 20vh;
 }
+@keyframes moveAndGlowAsteroid {
+    0% {
+        transform: translateX(100vw); 
+        filter: drop-shadow(0 0 30px rgba(255, 0, 0, 0.5)); 
+    }
+    50% {
+       
+        transform: translateX(50vw); 
+        filter: drop-shadow(0 0 10px rgba(0, 255, 64, 0.5));
+    }
+    100% {
+        transform: translateX(-10vw);
+        filter: drop-shadow(0 0 30px rgba(17, 0, 255, 0.5));
+    }
+}
+
+.asteroid {
+    position: fixed; 
+    z-index: 100; 
+    top: 12vh;
+    animation: moveAndGlowAsteroid 4s linear infinite; 
+    transition: transform 0.3s ease; 
+    
+}
+
 /*----------------------*/
 /*mid section*/
 
 .midsection{
-    border: white 1px solid;
-    height: 60vh;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 20vw 60vw 20vw;
 }
+
+/* .midleft{
+
+} */
+.midcenter{
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 5;
+    border-radius: 30px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    /* border: white 1px solid; */
+    width: 100%;
+    height: 17%;
+    text-align: center;
+    font-size: 100px;
+    font-weight: bolder;
+}
+.title:hover{
+    animation: breathing-glow-text 1.5s ease-in-out infinite; 
+}
+.body{
+    /* border: white 1px solid; */
+    width: 77%;
+    font-size: 25px;
+    line-height: 1.3;
+}
+.body:hover{
+    animation: breathing-glow-text 1.5s ease-in-out infinite; 
+}
+
 /*----------------------*/
 /*bottom section*/
 .bottomsection{
-    border: white 1px solid;
-    height: 20vh;
+    height: 10vh;
 }
 /*----------------------*/
+@keyframes breathing-glow-planet{
+    0%, 100% {
+        filter: drop-shadow(0 0 100px rgba(255, 251, 0, 0.5))
+    }
+    50% {
+        filter: drop-shadow(0 0 50px rgba(255, 145, 0, 0.5))
+    }
+  }
+.planet{
+    position: absolute;
+    scale: .7;
+    z-index: 3;
+    transition: transform 0.3s ease; 
+    animation: breathing-glow-planet 1.5s ease-in-out infinite;
+}
+.planet:hover{
+    
+    transform: scale(1.1);
+}
