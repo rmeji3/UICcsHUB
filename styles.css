@@ -1,0 +1,273 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Helvetica;
+    background-color: #ffffff;
+}
+.greybox{
+    background-color: #f0f2f5;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 53px;
+}
+.whitebox{
+    background-color: rgb(255, 255, 255);
+    color: #364c64
+}
+.container{
+ display:  grid;
+ grid-template-rows: 500px 100px;
+ grid-template-columns: 450px 400px;
+ background-color: #f0f2f5;
+ justify-content: center;
+}
+.img{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    
+}
+.fb{
+    border: 0;
+    margin-top: -115px;
+    margin-left: -10px;
+    width: 340px;
+    margin-left: -35px;
+}
+
+.connect {
+    margin-top: -20px;
+    font-size: 25px;
+    line-height: 1px;
+    text-align: left;
+    padding-left: 25px;
+    margin-left: -28px;
+}
+
+.login{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login-outerbox{
+    background-color: white;
+    margin-top: 35px;
+    height: 350px;
+    width: 390px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -1px 7px 10px rgba(0, 0, 10, .1);
+    border-radius: 7px;
+
+}
+
+
+
+button{
+    border-radius: 6px;
+   
+}
+.log {
+    background-color: #1877f2;
+    border: none;
+    color: white;
+    width: 356px;
+    height: 50px;
+    font-weight: 550;
+    font-size: 20px;
+}
+.log:hover{
+    cursor: pointer;
+}
+.forgot{
+    margin-top: 8px;
+    font-style: normal;
+    color: #1877f2;
+    font-size: 14px;
+}
+.forgot:hover{
+    cursor: pointer;
+}
+.line{
+    border-bottom: 1px solid #dadde1;
+    align-items: center;
+    margin: 10px 16px;
+    width: 320px;
+}
+.newaccount {
+    background-color: #36a420;
+    border-color: #36a420;
+    font-weight: 550;
+    width: 190px;
+    height: 47px;
+    color: white;
+    border: none;
+    font-size: 16px;
+    
+}
+
+.newaccount:hover{
+    cursor: pointer;
+}
+.userfield{
+    border-radius: 6px;
+    border: solid;
+    border-width: 1px;
+    width: 345px;
+    height: 50px;
+    border-color:#dddfe2;
+    margin-bottom: 15px;
+    padding-left: 12px;
+    box-shadow: inset 1px 1px 1px rgba(46, 46, 46, 0.1);
+    font-size: 17px;
+}
+
+.passfield{
+    border-radius: 6px;
+    border: solid;
+    border-color:#dddfe2;
+    border-width: 1px;
+    width: 345px;
+    height: 50px;
+    padding-left: 12px;
+    box-shadow: inset 1px 1px 1px rgba(46, 46, 46, 0.1);
+    font-size: 17px;
+}
+input[type="text"]::placeholder, input[type="password"]::placeholder {
+    color: #c4c1c1; /* Placeholder text color */
+    font-size: 17px;
+}
+.userfield:focus, .passfield:focus {
+    border-color: #007bff; /* New border color when the field is focused */
+    /* Additional styles to enhance focus state, if desired */
+    box-shadow: 0 0 0 .1px #1877f2; /* Optional: Adds a glow effect */
+    outline: none; /* Removes the default outline to clean up the appearance */
+}
+.userfield:focus::placeholder, .passfield:focus::placeholder {
+    color: #d6d7d8;
+}
+.textunderlog{
+    font-size: 14px;
+    padding-top: 15px;
+}
+.whitebox{
+    color: #8a8d91;
+    font-size: 12px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.language{
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    margin-left: -130px;
+}
+.language:hover{
+    cursor: pointer;
+    
+}
+.lang{
+    margin: 4px;
+    
+}
+.lang:hover{
+    text-decoration: underline;
+}
+.plus{
+    border: 1px solid #dadde1;
+    background-color: #f0f2f5;
+    width: 31px;
+    height: 21px;
+    border-radius: 2px;
+    font-weight: bold;
+    color: rgb(66, 66, 66);
+    font-size: 17px;
+    margin-top: 3px;
+
+}
+.plus:hover{
+    background-color: #ebedf0;
+    cursor: pointer;
+}
+.plusSvg{
+    margin-top: -2px;
+    fill: #464646;
+    width: 18px;
+    height: auto;
+}
+
+.line2 {
+    border-bottom: 1px solid #dddfe2;
+    font-size: 1px;
+    height: 8px;
+    width: 800px;
+}
+.other {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-top: 7px;
+    row-gap: 6px;
+    font-size: 12px;
+
+    
+}
+.other:hover{
+    cursor: pointer;
+}
+.list1:hover{
+    text-decoration: underline;
+}
+.list2:hover{
+    text-decoration: underline;
+}
+.list3:hover{
+    text-decoration: underline;
+}
+.t1{
+    display: flex;
+    flex-direction: row;
+    column-gap: 8px;
+}
+.t2{
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+}
+
+.t3{
+    display: flex;
+    flex-direction: row;
+    column-gap: 8px;
+    column-gap: 15px;
+}
+.ad{
+    position: absolute;
+    width: 12px;
+    height: auto;
+    padding-left: 1.5px;
+    fill: #343ecc;
+}
+#adc{
+    padding-right: 4px;
+}
+.meta{
+    margin-top: 20px;
+    margin-left: -733px;
+}
