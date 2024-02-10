@@ -266,6 +266,7 @@ html, body{
     height: 70vh;
     display: grid;
     grid-template-columns: 20vw 60vw 20vw;
+    position: relative;
 }
 
 /* .midleft{
@@ -315,16 +316,16 @@ html, body{
 /*----------------------*/
 @keyframes breathing-glow-planet{
     0%, 100% {
-        filter: drop-shadow(0 0 100px rgba(255, 251, 0, 0.5))
+        filter: drop-shadow(0 0 100px rgba(255, 30, 0, 0.5))
     }
     50% {
-        filter: drop-shadow(0 0 50px rgba(255, 145, 0, 0.5))
+        filter: drop-shadow(0 0 50px rgba(255, 0, 234, 0.5))
     }
   }
 .planet{
     position: absolute;
-    scale: .7;
-    z-index: 3;
+    scale: 2;
+    z-index: 4;
     transition: transform 0.3s ease; 
     animation: breathing-glow-planet 1.5s ease-in-out infinite;
 }
@@ -334,10 +335,23 @@ html, body{
 }
 .textfield{
     
-    height: 70%;
+    height: 55%;
     text-align: start;
     width: 70%;
     background-color: transparent;
     color: white;
+    box-sizing: border-box;
     resize: none;
+    border-radius: 16px;
+}
+
+.submit{
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    /* height: 60px;
+    width: 100px; */
+    bottom: 0;
+    border-radius: 16px;
 }

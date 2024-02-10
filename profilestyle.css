@@ -266,7 +266,7 @@ html, body{
     /* border: 1px white solid; */
     display: grid;
     grid-template-rows: 55% 15% 10% 20%;
-    background: rgba(0, 0, 0, 0.5);
+    background: #104c9b3a;
     backdrop-filter: blur(10px);
     border-radius: 20px;
     margin-bottom: 20px;
@@ -393,7 +393,7 @@ html, body{
     grid-template-rows: 60% 40%;
 }
 .midcenter-right-top{
-    background: rgba(0, 0, 0, 0.5);
+    background: #7225b63f;
     backdrop-filter: blur(10px);
     border-radius: 20px;
     display: grid;
@@ -506,7 +506,7 @@ html, body{
     margin-top: 20px;
 }
 .midcenter-right-bottom-left{
-    background: rgba(0, 0, 0, 0.5);
+    background: #7225b63f;
     backdrop-filter: blur(10px);
     border-radius: 20px;
     margin-right: 20px;
@@ -564,7 +564,7 @@ html, body{
     justify-content: right;
 
 }
-.edit-courses-btn{
+.edit-courses-btn, .edit-friends-btn{
     border-radius: 20px;
     margin: 12px;
     margin-right: 20px;
@@ -599,7 +599,7 @@ html, body{
 
 
 .midcenter-right-bottom-right{
-    background: rgba(0, 0, 0, 0.5);
+    background: #104c9b3a;
     backdrop-filter: blur(10px);
     border-radius: 20px;
     display: grid;
@@ -625,8 +625,7 @@ html, body{
     display: flex;
     justify-content: right;
 }
-.edit-friends-btn{
-    font-size: 11px;
+/* .edit-friends-btn{
     background-color: transparent;
     border: 1px white solid;
     border-radius: 20px;
@@ -634,7 +633,16 @@ html, body{
     margin-right: 20px;
     color: white;
     font-weight: bolder;
-}
+    font-size: 17px;
+    box-sizing: border-box;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 45%;
+
+} */
 .edit-friends-btn:hover{
     animation: breathing-glow-box 2s ease-in-out infinite, 
     breathing-glow-text 2s ease-in-out infinite;
