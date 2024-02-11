@@ -1,0 +1,396 @@
+html, body{
+    background-color: #0c1016;
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow-y: auto;
+}
+body::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0); 
+    border-radius: 10px; 
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.096); 
+    border-radius: 10px; 
+}
+body::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(128, 128, 128, 0.144); 
+    cursor: pointer;
+}
+
+
+body::-webkit-scrollbar {
+    width: 15px; 
+}
+
+@keyframes breathing-glow-box {
+    0%, 100% {
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 12px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.75), 0 0 20px rgba(255, 255, 255, 0.75);
+    }
+}
+.star {
+    position: fixed; 
+    width: 4px; 
+    height: 4px; 
+    background-color: white;
+    border-radius: 50%;
+    animation: breathing-glow-box 2s ease-in-out infinite;
+    z-index: 1; 
+    pointer-events: none;
+}
+.topbar {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 5;
+    overflow: hidden; 
+}
+
+/* logo */
+.logoarea{
+    font-size: 20px;
+    width: 50%;
+    display: flex;
+    
+}
+.parLogo{
+    text-decoration: none;
+    display: flex; 
+    transition: transform 0.3s ease;
+}
+.parLogo:hover{
+    transform: scale(1.2);
+    animation: breathing-glow-svg 1s ease-in-out infinite; 
+}
+.logotopbar{
+    display: flex;
+    justify-content: right;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.ulo{
+    height: 60px;
+}
+
+.logotexttopbar{
+    font-weight: bolder;
+    font-size: 23px;
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.logotopbar{
+    width: 100px;
+}
+/* ---------------------- */
+
+
+
+
+
+/*drop down menu*/
+.rightitems{
+    overflow: visible;
+    width: 50%;
+    display: flex;
+    justify-content: end;
+}
+.dropdown{
+    display: flex;
+    width: 110px;
+    justify-content: left;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.dropdown-content {
+    position: fixed;
+    right: -50vw; 
+    width: 20vw; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    transition: right 0.7s ease;
+    color: white; 
+    z-index: 5;
+    display: grid;
+    grid-template-rows: 15vh 7vh 7vh 7vh 7vh 100%;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-top: 10vh;
+}
+
+@keyframes breathing-glow-text{
+    0%, 100% {
+      text-shadow: 0 0 8px white, 0 0 12px white;
+    }
+    50% {
+      text-shadow: 0 0 15px white, 0 0 20px white;
+    }
+  }
+  
+  .about-text-dropdown, .profile-text-dropdown, 
+  .courses-text-dropdown, .contactus-text-dropdown {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+    transform: scale(1); 
+  }
+  
+  .about-text-dropdown:hover, .profile-text-dropdown:hover, 
+  .courses-text-dropdown:hover, .contactus-text-dropdown:hover {
+    transform: scale(1.2);
+    animation: breathing-glow-text 1.5s ease-in-out infinite; 
+  }
+  
+
+
+
+
+  @keyframes breathing-glow-svg {
+    0%, 100% {
+        filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    }
+}
+
+
+.dropdown-content.active {
+    right: 0; 
+}
+
+.ham{
+    height: 70px; 
+    transition: transform 0.3s ease;
+}
+.ham:hover{
+    animation: breathing-glow-svg 1.5s ease-in-out infinite;
+    transform: scale(1.2);
+}
+.topbarlogin{
+    justify-content: end;
+}
+
+
+/*drop down menu*/
+.rightitems{
+    overflow: visible;
+    width: 50%;
+    display: flex;
+    justify-content: end;
+}
+.dropdown{
+    display: flex;
+    width: 110px;
+    justify-content: left;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.dropdown-content {
+    position: fixed;
+    top: 0;
+    right: -50vw; 
+    width: 20vw; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    transition: right 0.7s ease;
+    color: white; 
+    z-index: 5;
+    display: grid;
+    grid-template-rows: 15vh 7vh 7vh 7vh 7vh 100%;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+@keyframes breathing-glow-text{
+    0%, 100% {
+      text-shadow: 0 0 8px white, 0 0 12px white;
+    }
+    50% {
+      text-shadow: 0 0 15px white, 0 0 20px white;
+    }
+  }
+  
+  .about-text-dropdown, .profile-text-dropdown, 
+  .courses-text-dropdown, .contactus-text-dropdown {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+    transform: scale(1); 
+  }
+  
+/*----------------------*/
+.topspace{
+    /* outline: 1px white solid;L */
+    width: 100%;
+    height: 20vh;
+}
+.midspace{
+    /* outline: 1px white solid; */
+    width: 100%;
+    height: 300vh;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+}
+.midmid{
+    /* outline: 1px white solid; */
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    gap: 4vh;
+    
+}
+.midmid > * {
+    transition: transform 0.6s ease;
+    z-index: 2;
+    border-radius: 20px; 
+    color: white;
+    display: grid;
+    grid-template-rows: 20% 8% 60% 12%;
+    padding-left: 5%; 
+    padding-right: 5%; 
+    align-items: center;
+    justify-content: center;
+    /* outline: 1px white solid; */
+}
+.titlecontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    padding-top: 10%;
+    font-size: 60px;
+    font-weight: bolder;
+    text-align: center;
+    margin: 0; 
+}
+.credits-text{
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+
+}
+.description-text{
+
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center;
+}
+.midmid > *:nth-child(odd):hover {
+    transform: scale(1.2);
+    z-index: 3;
+    background: #7225b6;
+
+}
+.midmid > :nth-child(odd) {
+    background: #7225b63f;
+    backdrop-filter: blur(10px);
+}
+.midmid > *:nth-child(even):hover {
+    transform: scale(1.2);
+    z-index: 3;
+    background: #104c9b;
+
+}
+.midmid > :nth-child(even) {
+    background: #104c9b3a;
+    backdrop-filter: blur(10px);
+}
+.midmid > :nth-child(2) {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+.midmid > *:nth-child(2):hover {
+    transform: scale(1.2);
+    z-index: 3;
+    background: rgba(0, 0, 0, 1);
+
+}
+.midmid > :nth-child(7) {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+.midmid > *:nth-child(7):hover {
+    transform: scale(1.2);
+    z-index: 3;
+    background: rgba(0, 0, 0, 1);
+
+}
+
+.midmid > :nth-child(9) {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+.midmid > *:nth-child(9):hover {
+    transform: scale(1.2);
+    z-index: 3;
+    background: rgba(0, 0, 0, 1);
+
+}
+.midmid > :nth-child(11) {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+.midmid > *:nth-child(11):hover {
+    transform: scale(1.2);
+    z-index: 3;
+    background: rgba(0, 0, 0, 1);
+
+}
+
+.description-container{
+    display: flex;
+    flex-direction: column;
+}
+.cs-btn{
+    border-radius: 20px;
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center;
+    height: 5vh; 
+    width: 60%; 
+    border: 1px solid white;
+    font-size: 17px;
+    background-color: transparent;
+    box-sizing: border-box; 
+    margin-bottom: 5vh;
+}
+.cs-btn:hover{
+    animation: breathing-glow-box 2s ease-in-out infinite, 
+    breathing-glow-text 2s ease-in-out infinite;
+    cursor: pointer;
+}
+.coursecell > *:nth-child(4) {
+display: flex;
+align-items: center;
+justify-content: center;
+/* background-color: white; */
+}
+.bottomspace{
+    /* outline: 1px white solid; */
+    width: 100%;
+    height: 20vh;
+}
