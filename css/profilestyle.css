@@ -446,7 +446,7 @@ body {
 
 .center-right{
     display: grid;
-    grid-template-rows: 18% 30% 52%;
+    grid-template-rows: 18% 40% 42%;
 }
 
 /* #region progressbar */
@@ -466,7 +466,7 @@ body {
     background: #104c9b88;
 
 }
-.progress-outer:hover .progress-bar{
+.progress-bar-container:hover .progress-bar{
     animation: breathing-glow-box 2s ease-in-out infinite;
     z-index: 100;
 }
@@ -508,6 +508,208 @@ body {
     border-radius: 20px 0px 0px 20px;
 }
 /* #endregion progressbar */
+
+.friAndCour{
+    display: grid;
+    grid-template-columns: 65% 35%;
+}
+
+/* #region proficiency area */
+
+.proficiency-outer{
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+    background: #7225b63f;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    z-index: 3;
+    margin: 10px 0px 10px 10px;
+    transition: transform 0.4s ease;
+}
+.proficiency-outer:hover{
+    transform: scale(1.2);  
+    background: #7225b6a6;
+    backdrop-filter: blur(9px);
+    z-index: 4;
+}
+.proficiency-outer:hover .lang-bar-containers-c > * {
+     animation: grow-up-c 1s  forwards,
+     breathing-glow-box 2s ease-in-out infinite;
+}
+.proficiency-outer:hover .lang-bar-containers-cpp > * {
+    animation: grow-up-cpp 1s  forwards,
+    breathing-glow-box 2s ease-in-out infinite;
+}
+.proficiency-outer:hover .lang-bar-containers-cs > * {
+    animation: grow-up-cs 1s  forwards,
+    breathing-glow-box 2s ease-in-out infinite;
+}
+.proficiency-outer:hover .lang-bar-containers-java > * {
+    animation: grow-up-java 1s  forwards,
+    breathing-glow-box 2s ease-in-out infinite;
+}
+@keyframes grow-up-c {
+    from{
+        height: 0%;
+    }
+    to{
+        height: 30%;
+    }
+}
+@keyframes grow-up-cpp {
+    from{
+        height: 0%;
+    }
+    to{
+        height: 85%;
+    }
+}
+@keyframes grow-up-cs {
+    from{
+        height: 0%;
+    }
+    to{
+        height: 60%;
+    }
+}
+@keyframes grow-up-java {
+    from{
+        height: 0%;
+    }
+    to{
+        height: 70%;
+    }
+}
+.proficiency-title-container{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: white;
+    font-size: 170%;
+    font-weight: bold;
+}
+.proficiency-graph-container{
+    /* outline: white 1px solid; */
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+}
+.proficiency-graph-container > *{
+    /* outline: white 1px solid; */
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    border-bottom: white 1px solid;
+    border-top: white 1px solid;
+}
+.c-bar{
+    background-color: white;
+    width: 50%;
+    height: 30%;
+}
+.cpp-bar{
+    background-color: white;
+    width: 50%;
+    height: 85%;
+}
+.cs-bar{
+    background-color: white;
+    width: 50%;
+    height: 60%;
+}
+.java-bar{
+    background-color: white;
+    width: 50%;
+    height: 70%;
+}
+.proficiency-graph-langs-outer{
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+
+}
+.lang-container{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bolder;
+}
+.proficiency-graph-langs{
+    outline: white 1px solid;
+}
+/* #endregion proficiency area */
+
+
+/* #region courses */
+
+.courses-outer{
+    background: #104c9b3a;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    z-index: 3;
+    margin: 10px 10px 0px 10px;
+    transition: transform 0.4s ease;
+    display: grid;
+    grid-template-rows: 15% 65% 20%;
+    max-height: 100%;
+}
+.courses-title-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bolder;
+    font-size: 150%;
+}
+.courses-body{
+    display: grid;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+    grid-template-rows: repeat(7, 30%);
+    padding: 0;
+
+}
+.course-container{
+    /* outline: white 1px solid; */
+    display: flex;
+    justify-content: space-between;
+}
+.course-title
+{
+    padding-right: 5%;
+    font-size: 90%;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+}
+.course-num{
+    padding-left: 5%;
+    font-size: 90%;
+    text-align: right;
+    display: flex;
+    color: white;
+    justify-content: right;
+    align-items: center;
+}
+.courses-bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.courses-edit-btn{
+    outline: white 2px solid;
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    height: 70%;
+    width: 40%;
+    border-radius: 20px;
+
+}
+
+
+/* #endregion courses */
 
 /* #endregion center content */
 
