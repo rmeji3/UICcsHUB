@@ -9,6 +9,21 @@ body {
     padding: 0;
     height: 100%;
 }
+body::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: rgba(0, 0, 0, 0);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(92, 92, 92, 0.253);
+    border-radius: 20px;
+
+}
+body::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(141, 141, 141, 0.651);
+
+
+}
 .blur-overlay {
     display: none; /* Hidden by default */
     position: fixed;
@@ -53,7 +68,17 @@ body {
         scale: .4;
     }
   }
+  @keyframes breathing-glow-svg-red {
 
+    0%,
+    100% {
+        filter: drop-shadow(0 0 3px rgb(255, 0, 0)) drop-shadow(0 0 6px rgb(255, 0, 0)0.3)
+    }
+
+    50% {
+        filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5)) drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
+    }
+}
   .star {
     position: absolute;
     width: 2px;
@@ -295,7 +320,7 @@ body {
 /* #region center content */
 .center-outer {
     display: grid;
-    grid-template-columns: 35% 65%;
+    grid-template-columns: 21vw 39vw;
 }
 
 
@@ -404,7 +429,7 @@ body {
 .socials-outer:hover{
     transform: scale(1.2); 
     z-index: 4;
-    background: #000000c5;
+    background: #1f1f1fc5;
 
 }
 .social-cell{
@@ -416,10 +441,8 @@ body {
     text-decoration: none;
 }
 .social-cell:hover{
-    animation: breathing-glow-box 2s ease-in-out infinite;
-    transform: scale(1.2); 
     z-index: 4;
-    background: #000000c5;
+    background: #5a5a5a67;
 
 }
 .social-cell-left{
@@ -446,7 +469,7 @@ body {
 
 .center-right{
     display: grid;
-    grid-template-rows: 18% 40% 42%;
+    grid-template-rows: 12.6vh 28vh 29.4vh;
 }
 
 /* #region progressbar */
@@ -511,7 +534,7 @@ body {
 
 .friAndCour{
     display: grid;
-    grid-template-columns: 65% 35%;
+    grid-template-columns: 25.35vw 13.65vw;
 }
 
 /* #region proficiency area */
@@ -598,8 +621,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: end;
-    border-bottom: white 1px solid;
-    border-top: white 1px solid;
+    border-bottom: rgba(255, 255, 255, 0.13) 1px solid;
+    border-top: rgba(255, 255, 255, 0.13) 1px solid;
 }
 .c-bar{
     background-color: white;
@@ -649,7 +672,13 @@ body {
     transition: transform 0.4s ease;
     display: grid;
     grid-template-rows: 15% 65% 20%;
-    max-height: 100%;
+    max-height: 28.3vh;
+}
+.courses-outer:hover{
+    transform: scale(1.2);  
+    background: #104c9b88;
+    backdrop-filter: blur(9px);
+    z-index: 4;
 }
 .courses-title-container{
     display: flex;
@@ -658,6 +687,8 @@ body {
     color: white;
     font-weight: bolder;
     font-size: 150%;
+
+
 }
 .courses-body{
     display: grid;
@@ -665,32 +696,65 @@ body {
     overflow-x: hidden;
     position: relative;
     grid-template-rows: repeat(7, 30%);
-    padding: 0;
+    /* padding: 0; */
+}
+
+.courses-body::-webkit-scrollbar {
+    width: 13px;
+    background-color: rgba(0, 0, 0, 0);
+}
+.courses-body::-webkit-scrollbar-thumb {
+    background-color: rgba(92, 92, 92, 0.253);
+    border-radius: 20px;
+
+}
+.courses-body::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(141, 141, 141, 0.651);
+
 
 }
 .course-container{
     /* outline: white 1px solid; */
     display: flex;
     justify-content: space-between;
+    transition: transform 0.4s ease;
+    border-bottom: rgba(255, 255, 255, 0.11) 1px solid;
+    margin-left: 3%;
+    cursor: pointer;
+    text-decoration: none;
+}
+.course-container:hover{
+    background: #104c9b3a;
+    backdrop-filter: blur(10px);
+
 }
 .course-title
 {
-    padding-right: 5%;
-    font-size: 90%;
+    font-size: 110%;
     display: flex;
     color: white;
     justify-content: center;
     align-items: center;
-    text-align: right;
+    text-align: center;
 }
 .course-num{
     padding-left: 5%;
-    font-size: 90%;
+    font-size: 140%;
     text-align: right;
     display: flex;
     color: white;
     justify-content: right;
     align-items: center;
+    font-weight: bolder;
+}
+.trash-icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.trash-icon{
+    height: 40%;
+    animation: breathing-glow-svg 1s ease-in-out infinite;
 }
 .courses-bottom{
     display: flex;
@@ -698,6 +762,7 @@ body {
     align-items: center;
 }
 .courses-edit-btn{
+    display: flex;
     outline: white 2px solid;
     text-decoration: none;
     color: white;
@@ -705,11 +770,145 @@ body {
     height: 70%;
     width: 40%;
     border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s ease;
+
+}
+.courses-edit-btn:hover{
+    transition: transform 0.3s ease;
+    transform: scale(1.2);
+    animation: breathing-glow-box 1s ease-in-out infinite;
+}
+
+/* #endregion courses */
+
+
+
+/* #region friends */
+
+.friends-outer{
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    z-index: 3;
+    margin: 10px 0px 0px 10px;
+    transition: transform 0.4s ease 0s;
+    display: grid;
+    grid-template-rows: 15% 70% 15%;
+    max-height: 28.3vh;
+}
+.friends-outer:hover{
+
+    transform: scale(1.2); 
+    z-index: 4;
+    background: #1f1f1fc5;
+    
+
+}
+.friends-body{
+    display: grid;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+    grid-template-rows: repeat(8, 30%);
+}
+.friends-body::-webkit-scrollbar {
+    width: 9px;
+    background-color: rgba(0, 0, 0, 0);
+}
+.friends-body::-webkit-scrollbar-thumb {
+    background-color: rgba(92, 92, 92, 0.253);
+    border-radius: 20px;
+
+}
+.friends-body::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(141, 141, 141, 0.651);
+
+
+}
+.friends-cell{
+    display: flex;
+    grid-template-columns: 20% 60% 20%;
+    border-bottom: rgba(255, 255, 255, 0.11) 1px solid;
+    margin-left: 5%;
+}
+.friends-cell:hover{
+    z-index: 4;
+    background: #5a5a5a67;
+    cursor: pointer;
 
 }
 
+.friends-title{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 140%;
+    font-weight: bolder;
 
-/* #endregion courses */
+}
+.pfp{
+    
+    height: 50%;
+    border-radius: 50%;
+}
+.message-icon{
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.message-icon:hover{
+    animation: breathing-glow-svg 1s ease-in-out infinite;
+}
+.msg-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+.friends-name{
+    color: #ffffff;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-weight: bolder;
+}
+.friend-pfp-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100%;
+    margin-right: 3%;
+}
+.friends-bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.edit-friends-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: white 2px solid;
+    color: white;
+    border-radius: 20px;
+    width: 50%;
+    height: 70%;
+    font-weight: bolder;
+    text-decoration: none;
+    font-size: 80%;
+
+}
+.edit-friends-btn:hover{
+    transition: transform 0.3s ease;
+    transform: scale(1.2);
+    animation: breathing-glow-box 1s ease-in-out infinite;
+}
+
+/* #endregion friends */
 
 /* #endregion center content */
 
