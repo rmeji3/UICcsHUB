@@ -922,3 +922,8 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 /*----------------------*/
+.friend-pfp-container img{
+    max-width: 64px;
+    max-height: 64px;
+  
+}
