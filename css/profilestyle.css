@@ -24,11 +24,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 }
-/* Applying styles for Firefox */
-body {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(92, 92, 92, 0.253) rgba(0, 0, 0, 0);
-}
+
 .blur-overlay {
     display: none; /* Hidden by default */
     position: fixed;
