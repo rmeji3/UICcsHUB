@@ -15,32 +15,6 @@ function createStars(numberOfStars) {
     dropdownContent.classList.toggle('active');
 });
 
-// const overlay = document.createElement('div');
-// overlay.className = 'blur-overlay';
-// document.body.appendChild(overlay);
-
-
-// const hoverTarget = document.querySelector('.progress-outer');
-// hoverTarget.addEventListener('mouseenter', () => overlay.style.display = 'block');
-// hoverTarget.addEventListener('mouseleave', () => overlay.style.display = 'none');
-
-// const hoverTarget2 = document.querySelector('.profile-outer');
-// hoverTarget2.addEventListener('mouseenter', () => overlay.style.display = 'block');
-// hoverTarget2.addEventListener('mouseleave', () => overlay.style.display = 'none');
-
-// const hoverTarget3 = document.querySelector('.socials-outer');
-// hoverTarget3.addEventListener('mouseenter', () => overlay.style.display = 'block');
-// hoverTarget3.addEventListener('mouseleave', () => overlay.style.display = 'none');
-
-// const hoverTarget4 = document.querySelector('.courses-outer');
-// hoverTarget4.addEventListener('mouseenter', () => overlay.style.display = 'block');
-// hoverTarget4.addEventListener('mouseleave', () => overlay.style.display = 'none');
-
-// const hoverTarget5 = document.querySelector('.friends-outer');
-// hoverTarget5.addEventListener('mouseenter', () => overlay.style.display = 'block');
-// hoverTarget5.addEventListener('mouseleave', () => overlay.style.display = 'none');
-
-
 function updateEditFriendsButtonState() {
   var button = document.querySelector('.edit-friends-btn');
   var friendsBody = document.querySelector('.friends-body');
