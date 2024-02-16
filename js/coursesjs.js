@@ -1,4 +1,3 @@
-
 function createStars(numberOfStars) {
     for (let i = 0; i < numberOfStars; i++) {
       const star = document.createElement('div');
